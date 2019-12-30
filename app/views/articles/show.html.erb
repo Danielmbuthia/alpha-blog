@@ -1,0 +1,17 @@
+
+<p>
+  <strong>Title:</strong>
+  <%= @article.title %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @article.description %>
+</p>
+
+<p>
+  <strong>Created At</strong>
+  <%= @article.created_at %>
+</p>
+<%=link_to 'back to articles', articles_path %> |
+<%=link_to 'edit this article', edit_article_path(@article) %>
