@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
+  before_action :set_article, only: [:edit,:update,:show,:destroy]
   def index
-    @articles = Article.all
+    @articles = Article.paginate(page: params[:page],per_page:5)
   end
   def new
     @article = Article.new
@@ -16,13 +17,10 @@ class ArticlesController < ApplicationController
     end
   end
   def show
-    @article=Article.find(params[:id])
   end
   def edit
-   @article=Article.find(params[:id])
   end
   def update
-    @article=Article.find(params[:id])
     if @article.update(article_params)
       flash[:success] = "Article edited successfully"
       redirect_to @article
@@ -31,9 +29,11 @@ class ArticlesController < ApplicationController
     end
   end
   def destroy
-    @article=Article.find(params[:id])
     flash[:danger] = "Article Deleted Successfully"
     redirect_to articles_path
+  end
+  def set_article
+    @article=Article.find(params[:id])
   end
   private
   def article_params

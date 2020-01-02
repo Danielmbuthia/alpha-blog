@@ -14,6 +14,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap',  '~>4.3.1'
 gem 'font_awesome5_rails'
 gem 'sass-rails', '>= 6'
+gem 'will_paginate','3.1.7'
+gem 'will_paginate-bootstrap4'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem 'jquery-rails'
 gem 'webpacker', '~> 4.0'
