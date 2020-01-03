@@ -1,6 +1,7 @@
 <h1 align="center">Articles Listing</h1>
+<% if logged_in? %>
 <%=link_to 'Create New',new_article_path %>
-
+<% end %>
 <%= render 'article',obj:@articles %>
 <div align="center">
   <%= will_paginate @articles %>
